@@ -44,6 +44,19 @@ class SinglyLinkedList<T> {
 		head.next = temp.next;
 		return temp;
 	}
+	
+	public Node deleteAtEnd() {
+		if(head == null)
+	        return head;
+		Node last = head;
+		Node plast = null;
+		while(last.next != null) {
+			plast = last;
+			last = last.next;
+		}
+		plast.next = null;
+		return last;
+	}
 		
 	public void reverse(){
 		head = reverseList(head);

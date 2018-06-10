@@ -57,6 +57,20 @@ class SinglyLinkedList<T> {
 		plast.next = null;
 		return last;
 	}
+	public Node deleteAtNth(int position) {
+		if(position == 0) {
+			deleteAtFront();
+			return;
+		}
+		Node current = head;
+		Node prevcurrent = null;
+		while(--position > 0) {
+			prevcurrent = current;
+			current = current.next;
+		}
+		prevcurrent.next = current.next;
+		return current;
+	}
 		
 	public void reverse(){
 		head = reverseList(head);

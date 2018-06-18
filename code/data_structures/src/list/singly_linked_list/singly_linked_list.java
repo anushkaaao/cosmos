@@ -38,40 +38,7 @@ class SinglyLinkedList<T> {
 		head = head.next; //Make the second element in the list the new head, the Java garbage collector will later remove the old head
 		return temp;
 	}
-		
-	public Node deleteAtFront() {
-		Node temp = head.next;
-		head.next = temp.next;
-		return temp;
-	}
-	
-	public Node deleteAtEnd() {
-		if(head == null)
-	        return head;
-		Node last = head;
-		Node plast = null;
-		while(last.next != null) {
-			plast = last;
-			last = last.next;
-		}
-		plast.next = null;
-		return last;
-	}
-	public Node deleteAtNth(int position) {
-		if(position == 0) {
-			deleteAtFront();
-			return;
-		}
-		Node current = head;
-		Node prevcurrent = null;
-		while(--position > 0) {
-			prevcurrent = current;
-			current = current.next;
-		}
-		prevcurrent.next = current.next;
-		return current;
-	}
-		
+
 	public void reverse(){
 		head = reverseList(head);
 	}
